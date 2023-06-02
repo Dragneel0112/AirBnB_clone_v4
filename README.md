@@ -126,6 +126,7 @@ TestBaseModel class:
 * `def test_user_module_docstring(self)` - Test for the user.py module docstring
 * `def test_user_class_docstring(self)` - Test for the User class docstring
 
+### `Web Dynamic` - Contains the scripts to make a dynamic web page for AirBnB calling on Api's [web_dynamic](web_dynamic)
 
 ## Examples of use
 ```
@@ -160,5 +161,8 @@ Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
 
 Second part of Airbnb: Joann Vuong
+
+Part 4 Web Dynamic: Ruven Pillay
+
 ## License
 Public Domain. No copy write protection. 
