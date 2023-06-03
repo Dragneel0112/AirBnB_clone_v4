@@ -13,24 +13,21 @@ $(document).ready(function () {
       $('div.amenities > h4').html('&nbsp;');
     }
   });
-});
 
-$(function () {
-  $.ajax({
-    type: 'GET',
-    url: 'http://0.0.0.0:5001/api/v1/status/',
-    success: (data) => {
+  $.get('http://127.0.0.1:5001/api/v1/status/', function (data, textStatus) {
+    if (textStatus === 'success') {
       if (data.status === 'OK') {
-        $('div#api_status').addClass('available');
+        $('#api_status').addClass('available');
+      } else {
+        $('#api_status').removeClass('available');
       }
     }
   });
-  
   $.ajax({
     type: 'POST',
-    url: 'http://0.0.0.0:5001/api/v1/places_search/',
+    url: 'http://127.0.0.1:5001/api/v1/places_search/',
     contentType: 'application/json',
-    data: "{}",
+    data: '{}',
     success: (data) => {
       $('.places').empty();
       $.each(data, (i, place) => {
@@ -49,8 +46,8 @@ $(function () {
           ${place.description}
         </div>
         </article>
-        ` 
-        $(".places").append(sectionPlace);
+        `;
+        $('.places').append(sectionPlace);
       });
     }
   });
