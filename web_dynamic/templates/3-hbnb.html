@@ -11,7 +11,7 @@
     <!-- Imports jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Import js script -->
-    <script type="text/javascript" src="static/scripts/2-hbnb.js?{{ cache_id }}"></script>
+    <script type="text/javascript" src="static/scripts/3-hbnb.js?{{ cache_id }}"></script>
 
     <title>HBnB</title>
   </head>
@@ -69,10 +69,7 @@
             <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
             <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
 	  </div>
-	  <div class="user">
-            <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
-          </div>
-          <div class="description">
+	        <div class="description">
 	    {{ place.description | safe }}
           </div>
 	</article>
