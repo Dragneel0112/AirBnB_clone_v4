@@ -14,7 +14,7 @@ $(document).ready(function () {
     }
   });
 
-  $.get('http://127.0.0.1:5001/api/v1/status/', function (data, textStatus) {
+  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, textStatus) {
     if (textStatus === 'success') {
       if (data.status === 'OK') {
         $('#api_status').addClass('available');
@@ -25,7 +25,7 @@ $(document).ready(function () {
   });
   $.ajax({
     type: 'POST',
-    url: 'http://127.0.0.1:5001/api/v1/places_search/',
+    url: 'http://0.0.0.0:5001/api/v1/places_search/',
     contentType: 'application/json',
     data: '{}',
     success: (data) => {
@@ -55,7 +55,7 @@ $(document).ready(function () {
     $('.places > article').remove();
     $.ajax({
       type: 'POST',
-      url: 'http://127.0.0.1:5001/api/v1/places_search',
+      url: 'http://0.0.0.0:5001/api/v1/places_search',
       data: JSON.stringify({ 'amenities': Object.keys(checkedAmenities) }),
       dataType: 'json',
       contentType: 'application/json',
